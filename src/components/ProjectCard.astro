@@ -15,10 +15,9 @@ const { name, benefit, href, tags, icon } = Astro.props;
 >
   <header class="flex items-start gap-4">
     <div
-      class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-ribbon/10 text-2xl text-ribbon"
-      aria-hidden="true"
+      class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-ribbon/10 p-2"
     >
-      {icon}
+      <img src={icon} alt="" class="h-full w-full object-contain" />
     </div>
     <div>
       <h3 class="text-2xl text-ink">{name}</h3>

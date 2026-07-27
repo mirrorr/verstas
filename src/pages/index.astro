@@ -1,0 +1,45 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import LukumakuDemo from "../components/LukumakuDemo.svelte";
+import MuistiDemo from "../components/MuistiDemo.svelte";
+---
+
+<Layout>
+  <main class="mx-auto max-w-3xl px-6 sm:px-8">
+    <section class="flex min-h-[70vh] flex-col justify-center py-24">
+      <p class="font-serif text-sm uppercase tracking-[0.2em] text-ribbon">
+        The Workshop
+      </p>
+      <h1 class="mt-4 max-w-xl text-4xl leading-tight text-ink sm:text-5xl">
+        Small apps, carefully made — for reading more and forgetting less.
+      </h1>
+      <p class="mt-6 max-w-md text-lg text-ink-soft">
+        Two quiet tools built by hand, one habit at a time. No accounts to
+        manage, no feeds to scroll — just the thing itself.
+      </p>
+    </section>
+
+    <section class="flex flex-col gap-8 pb-28">
+      <ProjectCard
+        name="Lukumaku"
+        benefit="Keep a living record of what you read, without turning it into homework."
+        href="https://luku.netlify.app/"
+        tags={["reading", "journaling", "habit"]}
+        icon="📖"
+      >
+        <LukumakuDemo client:visible />
+      </ProjectCard>
+
+      <ProjectCard
+        name="Muisti"
+        benefit="Spaced-repetition flashcards that resurface what you're about to forget, right on time."
+        href="https://muista.netlify.app/"
+        tags={["flashcards", "memory", "spaced repetition"]}
+        icon="🧠"
+      >
+        <MuistiDemo client:visible />
+      </ProjectCard>
+    </section>
+  </main>
+</Layout>

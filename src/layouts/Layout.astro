@@ -1,0 +1,33 @@
+---
+import { ClientRouter } from "astro:transitions";
+import ScrollRibbon from "../components/ScrollRibbon.svelte";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "The Workshop — indie apps, carefully made",
+  description = "A small workshop building calm, useful apps: Lukumaku for book journaling and Muisti for spaced-repetition flashcards.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <ClientRouter />
+  </head>
+  <body class="min-h-screen bg-paper text-ink antialiased">
+    <ScrollRibbon client:load />
+    <slot />
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,45 @@
+@import "tailwindcss";
+@import "@fontsource-variable/fraunces";
+@import "@fontsource-variable/inter";
+
+@theme {
+  --font-serif: "Fraunces Variable", ui-serif, Georgia, serif;
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+
+  /* warm neutral base */
+  --color-paper: #f5efe2;
+  --color-paper-dim: #ece3d0;
+  --color-card: #fbf7ee;
+  --color-ink: #2b241d;
+  --color-ink-soft: #6d6153;
+  --color-hairline: #ded1b3;
+
+  /* single accent, a bookmark-ribbon red */
+  --color-ribbon: #a8402c;
+  --color-ribbon-soft: #c97a63;
+  --color-ribbon-dim: #7c2e1f;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+::selection {
+  background-color: var(--color-ribbon-soft);
+  color: var(--color-paper);
+}

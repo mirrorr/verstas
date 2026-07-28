@@ -13,6 +13,8 @@ const {
   title = "The Workshop — indie apps, carefully made",
   description = "A small workshop building calm, useful apps: Lukumaku for book journaling and Muisti for spaced-repetition flashcards.",
 } = Astro.props;
+
+const ogImage = new URL("/og-image.png", Astro.site ?? Astro.url.origin);
 ---
 
 <!doctype html>
@@ -21,8 +23,19 @@ const {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="description" content={description} />
     <title>{title}</title>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
     <ClientRouter />
   </head>
   <body class="min-h-screen bg-paper text-ink antialiased">

@@ -1,25 +1,22 @@
 <script>
   const entries = [
     {
-      title: "The Overstory",
-      author: "Richard Powers",
-      rating: 5,
-      note: "Finished under a blanket. Cried twice.",
-      pages: "512 / 512",
-    },
-    {
-      title: "Piranesi",
-      author: "Susanna Clarke",
+      title: "The Boy in the Striped Pyjamas",
+      author: "John Boyne",
       rating: 4,
-      note: "Rereading already — still eerie, still gentle.",
-      pages: "134 / 272",
+      note: "An intensely emotional read — a history lesson you won't forget.",
     },
     {
-      title: "Braiding Sweetgrass",
-      author: "Robin Wall Kimmerer",
+      title: "Sauna Moments",
+      author: "Katri Savola",
+      rating: 3,
+      note: "Great new vocabulary, short and sweet stories.",
+    },
+    {
+      title: "Avengers",
+      author: "Marvel",
       rating: 5,
-      note: "One chapter a night. No rush at all.",
-      pages: "88 / 400",
+      note: "Because it's fun and exciting — because, well, they're superheroes.",
     },
   ];
 
@@ -39,9 +36,15 @@
 
 <div class="flex flex-col gap-4 sm:flex-row sm:items-stretch">
   <div
-    class="h-16 w-12 shrink-0 self-center rounded-sm bg-ribbon/80 shadow-[2px_2px_0_var(--color-ribbon-dim)] sm:h-auto sm:self-stretch"
+    class="relative flex h-20 w-16 shrink-0 flex-col items-center justify-center gap-2 self-center overflow-hidden rounded-sm bg-gradient-to-br from-[#8c7355] to-[#4f3d2a] px-2 py-3 text-center shadow-[2px_4px_8px_rgba(43,36,29,0.35)] sm:h-auto sm:self-stretch"
     aria-hidden="true"
-  ></div>
+  >
+    <span class="h-px w-5 bg-paper/40"></span>
+    <span class="line-clamp-3 font-serif text-[10px] font-bold leading-snug text-paper">
+      {entry.title}
+    </span>
+    <span class="h-px w-5 bg-paper/40"></span>
+  </div>
 
   <div
     class="min-w-0 flex-1 transition-all duration-150 ease-out"
@@ -54,9 +57,6 @@
       {"★".repeat(entry.rating)}{"☆".repeat(5 - entry.rating)}
     </p>
     <p class="mt-2 font-serif italic text-ink-soft">"{entry.note}"</p>
-    <p class="mt-2 text-xs uppercase tracking-wide text-ink-soft/70">
-      {entry.pages} pages
-    </p>
   </div>
 </div>
 
@@ -68,3 +68,7 @@
   Turn the page
   <span aria-hidden="true">→</span>
 </button>
+
+<p class="mt-4 font-serif text-xs italic text-ink-soft/70">
+  Every book is a matter of taste.
+</p>

@@ -22,20 +22,36 @@ import MuistiDemo from "../components/MuistiDemo.svelte";
     <section class="flex flex-col gap-8 pb-28">
       <ProjectCard
         name="Lukumaku"
-        benefit="Keep a living record of what you read, without turning it into homework."
+        benefit="A living diary for what you read — small rewards keep you motivated, and fellow readers help you find what's next."
         href="https://luku.netlify.app/"
         tags={["reading", "journaling", "habit"]}
         icon="/icons/lukumaku.png"
+        benefits={[
+          "A private diary for every book — ratings, notes, and progress in one place.",
+          "Add a book in seconds — search fills in the title, author, and cover for you.",
+          "Keep a wishlist and turn it into a journal entry the moment you finish reading.",
+          "Discover your next read through recommendations from other readers — just the title, author, and why, never their private notes.",
+          "Set a yearly reading goal, and if you like, compare progress with friends in a private reading circle or an opt-in leaderboard.",
+          "Export your journal as JSON or CSV anytime.",
+        ]}
       >
         <LukumakuDemo client:visible />
       </ProjectCard>
 
       <ProjectCard
         name="Muisti"
-        benefit="Spaced-repetition flashcards that resurface what you're about to forget, right on time."
+        benefit="Small daily reviews that build a streak, timed to the way memory fades."
         href="https://muista.netlify.app/"
         tags={["flashcards", "memory", "spaced repetition"]}
         icon="/icons/muisti.svg"
+        benefits={[
+          "Reviews are timed to the science of memory (the Ebbinghaus forgetting curve), not guesswork.",
+          "Study however's fastest — keyboard shortcuts on desktop, swipe gestures on mobile.",
+          "Build a deck in seconds — paste a list of front/back pairs and you're studying.",
+          "Watch your recall curve flatten over time, with streaks and a review heatmap to keep you motivated.",
+          "Own your decks — import or export as JSON or CSV anytime.",
+          "Looks great everywhere, day or night — full dark mode, responsive on any device.",
+        ]}
       >
         <MuistiDemo client:visible />
       </ProjectCard>

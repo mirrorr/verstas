@@ -1,8 +1,8 @@
 <script>
   const cards = [
-    { front: "冬", back: "winter — fuyu" },
-    { front: "億劫", back: "too much bother — okkuu" },
-    { front: "木漏れ日", back: "sunlight through leaves — komorebi" },
+    { front: "🦌", back: "poro — reindeer" },
+    { front: "🌌", back: "revontulet — northern lights" },
+    { front: "🧣", back: "lapaset — mittens" },
   ];
 
   let index = $state(0);
@@ -72,3 +72,7 @@
     </div>
   {/if}
 </div>
+
+<p class="mt-4 text-center font-serif text-xs italic text-ink-soft/70">
+  One card a day keeps the streak alive.
+</p>

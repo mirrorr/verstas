@@ -1,4 +1,11 @@
 ---
+import type { Dict } from "../i18n/en";
+
+interface Props {
+  dict: Dict["footer"];
+}
+
+const { dict } = Astro.props;
 const currentYear = new Date().getFullYear();
 ---
 
@@ -7,15 +14,13 @@ const currentYear = new Date().getFullYear();
     class="mx-auto max-w-3xl px-6 py-14 text-center font-serif text-ink-soft sm:px-8"
   >
     <p class="text-sm italic leading-relaxed">
-      Set in Fraunces &amp; Inter. Built with Astro, Svelte and Tailwind, and
-      bound together on a quiet afternoon in {currentYear}.
+      {dict.colophon(currentYear)}
     </p>
 
     <div class="mt-8 h-px w-16 mx-auto bg-hairline" aria-hidden="true"></div>
 
     <p class="mt-8 text-base text-ink">
-      Made by <span class="font-semibold">Miroslav Macura</span> — a workshop
-      of one, building small tools worth returning to.
+      {dict.madeBy} <span class="font-semibold">Miroslav Macura</span> {dict.madeBySuffix}
     </p>
 
     <a
@@ -24,7 +29,7 @@ const currentYear = new Date().getFullYear();
       target="_blank"
       rel="noopener noreferrer"
     >
-      Say hello on LinkedIn
+      {dict.linkedin}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"

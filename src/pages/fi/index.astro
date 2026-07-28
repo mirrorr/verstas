@@ -1,9 +1,9 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import ProjectCard from "../components/ProjectCard.astro";
-import LukumakuDemo from "../components/LukumakuDemo.svelte";
-import MuistiDemo from "../components/MuistiDemo.svelte";
-import { en as dict } from "../i18n/en";
+import Layout from "../../layouts/Layout.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
+import LukumakuDemo from "../../components/LukumakuDemo.svelte";
+import MuistiDemo from "../../components/MuistiDemo.svelte";
+import { fi as dict } from "../../i18n/fi";
 ---
 
 <Layout>
@@ -31,7 +31,7 @@ import { en as dict } from "../i18n/en";
         visitLabel={dict.card.visit("Lukumaku")}
         whatsInsideLabel={dict.card.whatsInside}
       >
-        <LukumakuDemo client:visible lang="en" />
+        <LukumakuDemo client:visible lang="fi" />
       </ProjectCard>
 
       <ProjectCard
@@ -44,7 +44,7 @@ import { en as dict } from "../i18n/en";
         visitLabel={dict.card.visit("Muisti")}
         whatsInsideLabel={dict.card.whatsInside}
       >
-        <MuistiDemo client:visible lang="en" />
+        <MuistiDemo client:visible lang="fi" />
       </ProjectCard>
     </section>
   </main>

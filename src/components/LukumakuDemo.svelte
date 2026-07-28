@@ -1,4 +1,9 @@
 <script>
+  import { dictionaries } from "../i18n";
+
+  let { lang = "en" } = $props();
+  let strings = $derived(dictionaries[lang].demo.lukumaku);
+
   const entries = [
     {
       title: "The Boy in the Striped Pyjamas",
@@ -65,10 +70,10 @@
   onclick={next}
   class="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-ink-soft transition hover:text-ribbon"
 >
-  Turn the page
+  {strings.turnThePage}
   <span aria-hidden="true">→</span>
 </button>
 
 <p class="mt-4 font-serif text-xs italic text-ink-soft/70">
-  Every book is a matter of taste.
+  {strings.tagline}
 </p>

@@ -1,7 +1,9 @@
 ---
 import { ClientRouter } from "astro:transitions";
+import { getRelativeLocaleUrl } from "astro:i18n";
 import ScrollRibbon from "../components/ScrollRibbon.svelte";
 import Footer from "../components/Footer.astro";
+import { dictionaries } from "../i18n";
 import "../styles/global.css";
 
 interface Props {
@@ -9,16 +11,20 @@ interface Props {
   description?: string;
 }
 
-const {
-  title = "The Workshop — indie apps, carefully made",
-  description = "A small workshop building calm, useful apps: Lukumaku for book journaling and Muisti for spaced-repetition flashcards.",
-} = Astro.props;
+const locale = (Astro.currentLocale ?? "en") as keyof typeof dictionaries;
+const dict = dictionaries[locale];
+
+const { title = dict.meta.title, description = dict.meta.description } = Astro.props;
 
 const ogImage = new URL("/og-image.png", Astro.site ?? Astro.url.origin);
+
+const currentPath = Astro.url.pathname.replace(/^\/(en|fi)(\/|$)/, "/");
+const enHref = getRelativeLocaleUrl("en", currentPath);
+const fiHref = getRelativeLocaleUrl("fi", currentPath);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={dict.lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -40,7 +46,32 @@ const ogImage = new URL("/og-image.png", Astro.site ?? Astro.url.origin);
   </head>
   <body class="min-h-screen bg-paper text-ink antialiased">
     <ScrollRibbon client:load />
+
+    <div class="fixed top-4 right-4 z-40 flex items-center gap-1.5 font-serif text-xs tracking-wide sm:top-6 sm:right-8">
+      <a
+        href={enHref}
+        class:list={[
+          "transition",
+          dict.lang === "en" ? "text-ribbon" : "text-ink-soft hover:text-ribbon",
+        ]}
+        aria-current={dict.lang === "en" ? "true" : undefined}
+      >
+        EN
+      </a>
+      <span class="text-hairline" aria-hidden="true">·</span>
+      <a
+        href={fiHref}
+        class:list={[
+          "transition",
+          dict.lang === "fi" ? "text-ribbon" : "text-ink-soft hover:text-ribbon",
+        ]}
+        aria-current={dict.lang === "fi" ? "true" : undefined}
+      >
+        FI
+      </a>
+    </div>
+
     <slot />
-    <Footer />
+    <Footer dict={dict.footer} />
   </body>
 </html>

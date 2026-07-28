@@ -6,9 +6,11 @@ interface Props {
   tags: string[];
   icon: string;
   benefits?: string[];
+  visitLabel: string;
+  whatsInsideLabel: string;
 }
 
-const { name, benefit, href, tags, icon, benefits } = Astro.props;
+const { name, benefit, href, tags, icon, benefits, visitLabel, whatsInsideLabel } = Astro.props;
 ---
 
 <article
@@ -46,7 +48,7 @@ const { name, benefit, href, tags, icon, benefits } = Astro.props;
       rel="noopener noreferrer"
       class="inline-flex items-center gap-1.5 text-sm font-medium text-ribbon underline decoration-ribbon/40 underline-offset-4 transition hover:decoration-ribbon"
     >
-      Visit {name}
+      {visitLabel}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -68,7 +70,7 @@ const { name, benefit, href, tags, icon, benefits } = Astro.props;
     benefits && benefits.length > 0 && (
       <details class="group border-t border-hairline pt-4 [&_summary::-webkit-details-marker]:hidden">
         <summary class="flex cursor-pointer list-none items-center gap-1.5 text-sm font-medium text-ink-soft transition hover:text-ribbon">
-          What's inside
+          {whatsInsideLabel}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"

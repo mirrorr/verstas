@@ -1,4 +1,9 @@
 <script>
+  import { dictionaries } from "../i18n";
+
+  let { lang = "en" } = $props();
+  let strings = $derived(dictionaries[lang].demo.muisti);
+
   const cards = [
     { front: "🦌", back: "poro — reindeer" },
     { front: "🌌", back: "revontulet — northern lights" },
@@ -13,8 +18,8 @@
     if (!feedback) flipped = !flipped;
   }
 
-  function grade(label, days) {
-    feedback = `${label} — next review in ${days}`;
+  function grade(label, daysKey) {
+    feedback = strings.feedback(label, strings.inDays[daysKey]);
     setTimeout(() => {
       feedback = "";
       flipped = false;
@@ -40,9 +45,9 @@
     {#if feedback}
       <span class="text-ribbon">{feedback}</span>
     {:else if !flipped}
-      <span>Tap the card to reveal</span>
+      <span>{strings.tapToReveal}</span>
     {:else}
-      <span>How well did you know it?</span>
+      <span>{strings.howWellKnew}</span>
     {/if}
   </div>
 
@@ -50,29 +55,29 @@
     <div class="flex gap-2">
       <button
         type="button"
-        onclick={() => grade("Again", "10 minutes")}
+        onclick={() => grade(strings.again, "10 minutes")}
         class="rounded-full border border-hairline px-3 py-1 text-xs text-ink-soft transition hover:border-ribbon/40 hover:text-ribbon"
       >
-        Again
+        {strings.again}
       </button>
       <button
         type="button"
-        onclick={() => grade("Good", "4 days")}
+        onclick={() => grade(strings.good, "4 days")}
         class="rounded-full border border-hairline px-3 py-1 text-xs text-ink-soft transition hover:border-ribbon/40 hover:text-ribbon"
       >
-        Good
+        {strings.good}
       </button>
       <button
         type="button"
-        onclick={() => grade("Easy", "9 days")}
+        onclick={() => grade(strings.easy, "9 days")}
         class="rounded-full border border-hairline px-3 py-1 text-xs text-ink-soft transition hover:border-ribbon/40 hover:text-ribbon"
       >
-        Easy
+        {strings.easy}
       </button>
     </div>
   {/if}
 </div>
 
 <p class="mt-4 text-center font-serif text-xs italic text-ink-soft/70">
-  One card a day keeps the streak alive.
+  {strings.tagline}
 </p>

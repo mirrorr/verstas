@@ -10,6 +10,8 @@ export const en = {
     title: "Digital tools, built for you.",
     subtitle:
       "Carefully crafted design and ideas into practical solutions. Free and local.",
+    jumpTo: (name: string) => `Jump to ${name}`,
+    moreToCome: "+ more to come",
   },
   card: {
     visit: (name: string) => `Visit ${name}`,
@@ -45,7 +47,6 @@ export const en = {
   },
   demo: {
     lukumaku: {
-      turnThePage: "Turn the page",
       tagline: "Every book is a matter of taste.",
     },
     muisti: {

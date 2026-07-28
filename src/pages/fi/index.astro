@@ -18,10 +18,29 @@ import { fi as dict } from "../../i18n/fi";
       <p class="mt-6 max-w-md text-lg text-ink-soft">
         {dict.hero.subtitle}
       </p>
+
+      <div class="mt-8 flex items-center gap-3">
+        <a
+          href="#lukumaku"
+          aria-label={dict.hero.jumpTo("Lukumaku")}
+          class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-hairline bg-card p-2 transition hover:-translate-y-0.5 hover:border-ribbon/40"
+        >
+          <img src="/icons/lukumaku.png" alt="" class="h-full w-full object-contain" />
+        </a>
+        <a
+          href="#muisti"
+          aria-label={dict.hero.jumpTo("Muisti")}
+          class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-hairline bg-card p-2 transition hover:-translate-y-0.5 hover:border-ribbon/40"
+        >
+          <img src="/icons/muisti.svg" alt="" class="h-full w-full object-contain" />
+        </a>
+        <span class="ml-1 font-serif text-sm text-ink-soft/70">{dict.hero.moreToCome}</span>
+      </div>
     </section>
 
     <section class="flex flex-col gap-8 pb-28">
       <ProjectCard
+        id="lukumaku"
         name="Lukumaku"
         benefit={dict.projects.lukumaku.benefit}
         href="https://luku.netlify.app/"
@@ -35,6 +54,7 @@ import { fi as dict } from "../../i18n/fi";
       </ProjectCard>
 
       <ProjectCard
+        id="muisti"
         name="Muisti"
         benefit={dict.projects.muisti.benefit}
         href="https://muista.netlify.app/"

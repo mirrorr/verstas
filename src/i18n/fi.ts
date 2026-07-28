@@ -12,6 +12,8 @@ export const fi: Dict = {
     title: "Digitaalisia työkaluja, juuri sinulle.",
     subtitle:
       "Huolella muotoiltua suunnittelua ja ideoita käytännön ratkaisuiksi. Ilmainen ja paikallinen.",
+    jumpTo: (name: string) => `Siirry kohtaan ${name}`,
+    moreToCome: "+ lisää tulossa",
   },
   card: {
     visit: (name: string) => `Vieraile sivustolla ${name}`,
@@ -47,7 +49,6 @@ export const fi: Dict = {
   },
   demo: {
     lukumaku: {
-      turnThePage: "Käännä sivua",
       tagline: "Jokainen kirja on makuasia.",
     },
     muisti: {

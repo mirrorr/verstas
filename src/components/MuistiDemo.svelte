@@ -34,7 +34,7 @@
   <button
     type="button"
     onclick={toggle}
-    class="flex h-28 w-full items-center justify-center rounded-xl border border-hairline bg-paper px-4 text-center transition hover:border-ribbon/40"
+    class="flex h-28 w-full cursor-pointer items-center justify-center rounded-xl border border-hairline bg-paper px-4 text-center transition hover:border-ribbon/40"
   >
     <span class="font-serif text-2xl text-ink">
       {flipped ? card.back : card.front}
@@ -56,21 +56,21 @@
       <button
         type="button"
         onclick={() => grade(strings.again, "10 minutes")}
-        class="rounded-full border border-hairline px-3 py-1 text-xs text-ink-soft transition hover:border-ribbon/40 hover:text-ribbon"
+        class="cursor-pointer rounded-full border border-hairline px-3 py-1 text-xs text-ink-soft transition hover:border-ribbon/40 hover:text-ribbon"
       >
         {strings.again}
       </button>
       <button
         type="button"
         onclick={() => grade(strings.good, "4 days")}
-        class="rounded-full border border-hairline px-3 py-1 text-xs text-ink-soft transition hover:border-ribbon/40 hover:text-ribbon"
+        class="cursor-pointer rounded-full border border-hairline px-3 py-1 text-xs text-ink-soft transition hover:border-ribbon/40 hover:text-ribbon"
       >
         {strings.good}
       </button>
       <button
         type="button"
         onclick={() => grade(strings.easy, "9 days")}
-        class="rounded-full border border-hairline px-3 py-1 text-xs text-ink-soft transition hover:border-ribbon/40 hover:text-ribbon"
+        class="cursor-pointer rounded-full border border-hairline px-3 py-1 text-xs text-ink-soft transition hover:border-ribbon/40 hover:text-ribbon"
       >
         {strings.easy}
       </button>

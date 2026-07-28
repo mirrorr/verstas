@@ -1,5 +1,6 @@
 ---
 interface Props {
+  id: string;
   name: string;
   benefit: string;
   href: string;
@@ -10,11 +11,12 @@ interface Props {
   whatsInsideLabel: string;
 }
 
-const { name, benefit, href, tags, icon, benefits, visitLabel, whatsInsideLabel } = Astro.props;
+const { id, name, benefit, href, tags, icon, benefits, visitLabel, whatsInsideLabel } = Astro.props;
 ---
 
 <article
-  class="flex flex-col gap-6 rounded-2xl border border-hairline bg-card p-6 shadow-[0_1px_0_var(--color-hairline)] sm:p-8"
+  id={id}
+  class="flex scroll-mt-6 flex-col gap-6 rounded-2xl border border-hairline bg-card p-6 shadow-[0_1px_0_var(--color-hairline)] sm:p-8"
 >
   <header class="flex items-start gap-4">
     <div
@@ -28,7 +30,9 @@ const { name, benefit, href, tags, icon, benefits, visitLabel, whatsInsideLabel 
     </div>
   </header>
 
-  <div class="rounded-xl border border-hairline bg-paper/60 p-4 sm:p-5">
+  <div
+    class="cursor-pointer rounded-xl border border-hairline bg-paper/60 p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-ribbon/40 hover:shadow-[0_6px_16px_rgba(43,36,29,0.1)] motion-reduce:transition-none motion-reduce:hover:translate-y-0 sm:p-5"
+  >
     <slot />
   </div>
 

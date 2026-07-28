@@ -1,0 +1,43 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { en as dict } from "../i18n/en";
+---
+
+<Layout title={dict.install.meta.title} description={dict.install.meta.description}>
+  <main class="mx-auto max-w-3xl px-6 py-24 sm:px-8">
+    <a
+      href={dict.install.backHref}
+      class="text-sm font-medium text-ink-soft transition hover:text-ribbon"
+    >
+      {dict.install.backLabel}
+    </a>
+
+    <p class="mt-10 font-serif text-sm uppercase tracking-[0.2em] text-ribbon">
+      {dict.install.eyebrow}
+    </p>
+    <h1 class="mt-4 max-w-xl text-4xl leading-tight text-ink sm:text-5xl">
+      {dict.install.title}
+    </h1>
+    <p class="mt-6 max-w-md text-lg text-ink-soft">
+      {dict.install.intro}
+    </p>
+
+    <div class="mt-16 flex flex-col gap-8">
+      {
+        dict.install.platforms.map((platform) => (
+          <section class="rounded-2xl border border-hairline bg-card p-6 sm:p-8">
+            <h2 class="font-serif text-xl text-ink">{platform.name}</h2>
+            <ol class="mt-4 flex flex-col gap-2.5">
+              {platform.steps.map((step, i) => (
+                <li class="flex gap-3 text-ink-soft">
+                  <span class="font-serif text-ribbon">{i + 1}.</span>
+                  <span>{step}</span>
+                </li>
+              ))}
+            </ol>
+          </section>
+        ))
+      }
+    </div>
+  </main>
+</Layout>

@@ -66,11 +66,55 @@ export const fi: Dict = {
     },
   },
   footer: {
-    colophon: (year: number) =>
-      `Ladottu Fraunces- ja Inter-fonteilla. Rakennettu Astrolla, Sveltellä ja Tailwindilla, ja sidottu yhteen rauhallisena iltapäivänä vuonna ${year}.`,
     madeBy: "Tehnyt",
     madeBySuffix:
       "— yhden hengen paja, joka rakentaa pieniä työkaluja, joiden luo kannattaa palata.",
     linkedin: "Sano hei LinkedInissä",
+    pwaNote:
+      "Jokainen sovellus tässä — myös tämä sivusto — toimii suoraan selaimessa ja asentuu kuin natiivisovellus puhelimeesi tai tietokoneellesi. Kaikki on rakennettu yhdessä Claude Coden kanssa.",
+    installGuideLabel: "Katso asennusohjeet →",
+    installHref: "/fi/install",
+  },
+  install: {
+    meta: {
+      title: "Asenna se kuin sovellus — Verstas",
+      description:
+        "Näin asennat Lukumakun, Muistin tai minkä tahansa Verstaan sovelluksen puhelimeesi tai tietokoneellesi — ilman sovelluskauppaa.",
+    },
+    eyebrow: "Opas",
+    title: "Asenna se kuin sovellus.",
+    intro:
+      "Nämä ovat asennettavia web-sovelluksia (PWA) — sovelluskauppaa ei tarvita. Lisää sovellus kotinäytölle, niin se avautuu koko näytölle, toimii ilman verkkoyhteyttä ja tuntuu aivan natiivisovellukselta.",
+    platforms: [
+      {
+        name: "iPhone ja iPad (Safari)",
+        steps: [
+          "Avaa sovellus Safarissa.",
+          "Napauta jako-kuvaketta (neliö ja nuoli).",
+          'Vieritä alas ja napauta "Lisää kotivalikkoon".',
+          'Napauta "Lisää" — valmista.',
+        ],
+      },
+      {
+        name: "Android (Chrome)",
+        steps: [
+          "Avaa sovellus Chromessa.",
+          "Napauta ⋮-valikkoa oikeasta yläkulmasta.",
+          'Napauta "Asenna sovellus" (tai "Lisää kotivalikkoon").',
+          "Vahvista — sovellus löytyy nyt kotivalikostasi.",
+        ],
+      },
+      {
+        name: "Tietokone (Chrome tai Edge)",
+        steps: [
+          "Avaa sovellus Chromessa tai Edgessä.",
+          "Napsauta asennuskuvaketta osoiterivillä.",
+          'Napsauta "Asenna".',
+          "Sovellus avautuu omaan ikkunaansa, kuten mikä tahansa muu sovellus.",
+        ],
+      },
+    ],
+    backLabel: "← Takaisin etusivulle",
+    backHref: "/fi/",
   },
 };

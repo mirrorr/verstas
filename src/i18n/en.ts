@@ -64,11 +64,55 @@ export const en = {
     },
   },
   footer: {
-    colophon: (year: number) =>
-      `Set in Fraunces & Inter. Built with Astro, Svelte and Tailwind, and bound together on a quiet afternoon in ${year}.`,
     madeBy: "Made by",
     madeBySuffix: "— a workshop of one, building small tools worth returning to.",
     linkedin: "Say hello on LinkedIn",
+    pwaNote:
+      "Every app here — this site included — works right in the browser and installs like a native app on your phone or computer, all of it built together with Claude Code.",
+    installGuideLabel: "See how to install →",
+    installHref: "/install",
+  },
+  install: {
+    meta: {
+      title: "Install it like an app — The Workshop",
+      description:
+        "How to install Lukumaku, Muisti, or any app from The Workshop on your phone or computer — no app store needed.",
+    },
+    eyebrow: "Guide",
+    title: "Install it like an app.",
+    intro:
+      "These are Progressive Web Apps — no app store needed. Add one to your home screen and it opens full-screen, works offline, and feels just like a native app.",
+    platforms: [
+      {
+        name: "iPhone & iPad (Safari)",
+        steps: [
+          "Open the app in Safari.",
+          "Tap the Share icon (square with an arrow).",
+          'Scroll down and tap "Add to Home Screen".',
+          'Tap "Add" — done.',
+        ],
+      },
+      {
+        name: "Android (Chrome)",
+        steps: [
+          "Open the app in Chrome.",
+          "Tap the ⋮ menu in the top right.",
+          'Tap "Install app" (or "Add to Home screen").',
+          "Confirm — it's now on your home screen.",
+        ],
+      },
+      {
+        name: "Desktop (Chrome or Edge)",
+        steps: [
+          "Open the app in Chrome or Edge.",
+          "Click the install icon in the address bar.",
+          'Click "Install".',
+          "It opens in its own window, like any other app.",
+        ],
+      },
+    ],
+    backLabel: "← Back to The Workshop",
+    backHref: "/",
   },
 };
 

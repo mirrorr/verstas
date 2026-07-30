@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import ProjectCard from "../../components/ProjectCard.astro";
 import LukumakuDemo from "../../components/LukumakuDemo.svelte";
 import MuistiDemo from "../../components/MuistiDemo.svelte";
+import FiilisDemo from "../../components/FiilisDemo.svelte";
 import { fi as dict } from "../../i18n/fi";
 ---
 
@@ -34,6 +35,13 @@ import { fi as dict } from "../../i18n/fi";
         >
           <img src="/icons/muisti.svg" alt="" class="h-full w-full object-contain" />
         </a>
+        <a
+          href="#fiilis"
+          aria-label={dict.hero.jumpTo("Fiilis")}
+          class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-hairline bg-card p-2 transition hover:-translate-y-0.5 hover:border-ribbon/40"
+        >
+          <img src="/icons/fiilis.svg" alt="" class="h-full w-full object-contain" />
+        </a>
         <span class="ml-1 font-serif text-sm text-ink-soft/70">{dict.hero.moreToCome}</span>
       </div>
     </section>
@@ -49,6 +57,7 @@ import { fi as dict } from "../../i18n/fi";
         benefits={dict.projects.lukumaku.benefits}
         visitLabel={dict.card.visit("Lukumaku")}
         whatsInsideLabel={dict.card.whatsInside}
+        demoLabel={dict.card.demo}
       >
         <LukumakuDemo client:visible lang="fi" />
       </ProjectCard>
@@ -63,8 +72,24 @@ import { fi as dict } from "../../i18n/fi";
         benefits={dict.projects.muisti.benefits}
         visitLabel={dict.card.visit("Muisti")}
         whatsInsideLabel={dict.card.whatsInside}
+        demoLabel={dict.card.demo}
       >
         <MuistiDemo client:visible lang="fi" />
+      </ProjectCard>
+
+      <ProjectCard
+        id="fiilis"
+        name="Fiilis"
+        benefit={dict.projects.fiilis.benefit}
+        href="https://fiilis.netlify.app/"
+        tags={dict.projects.fiilis.tags}
+        icon="/icons/fiilis.svg"
+        benefits={dict.projects.fiilis.benefits}
+        visitLabel={dict.card.visit("Fiilis")}
+        whatsInsideLabel={dict.card.whatsInside}
+        demoLabel={dict.card.demo}
+      >
+        <FiilisDemo client:visible lang="fi" />
       </ProjectCard>
     </section>
   </main>

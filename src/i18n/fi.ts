@@ -5,7 +5,7 @@ export const fi: Dict = {
   meta: {
     title: "Verstas — huolella tehtyjä sovelluksia",
     description:
-      "Pieni paja, joka rakentaa rauhallisia ja hyödyllisiä sovelluksia: Lukumaku kirjapäiväkirjaan ja Muisti aikaväliin perustuvaan kertaamiseen.",
+      "Pieni paja, joka rakentaa rauhallisia ja hyödyllisiä sovelluksia: Lukumaku kirjapäiväkirjaan, Muisti aikaväliin perustuvaan kertaamiseen ja Fiilis kymmenen sekunnin mielialapäiväkirjaan.",
   },
   hero: {
     eyebrow: "Verstas",
@@ -18,6 +18,7 @@ export const fi: Dict = {
   card: {
     visit: (name: string) => `Vieraile sivustolla ${name}`,
     whatsInside: "Mitä sisältyy",
+    demo: "Demo",
   },
   projects: {
     lukumaku: {
@@ -46,6 +47,19 @@ export const fi: Dict = {
         "Näyttää hyvältä kaikkialla, yötä päivää — täysi tumma tila, responsiivinen kaikilla laitteilla.",
       ],
     },
+    fiilis: {
+      benefit:
+        "Kymmenen sekunnin mielialamerkintä, josta kasvaa ajan myötä katsomisen arvoinen historia.",
+      tags: ["mieliala", "päiväkirja", "putket"],
+      benefits: [
+        "Kirjaa päiväsi noin kymmenessä sekunnissa — naama, muutama valinta, ehkä yksi lause, valmis.",
+        "Katso taaksepäin värikkääksi piirtyvää kuukautta, koko aikajanaa ja putkia, jotka eivät syyllistä — eilenä päättynyt putki lasketaan yhä voimassa olevaksi, koska tämä päivä on vielä kesken.",
+        "Näe oikeita yhteyksiä, kuten paranevatko fiilikset hyvän yöunen jälkeen, kunhan historiaa on kertynyt tarpeeksi.",
+        "Toimii täysin ilman verkkoyhteyttä asennettavana sovelluksena — merkinnät synkronoituvat automaattisesti yhteyden palattua, ei koskaan kahteen kertaan.",
+        "Jos käytät myös Lukumakua tai Muistia, Fiilis voi (vain jos otat sen käyttöön) ehdottaa sopivaa tarraa niille päiville, joina opiskelit tai luit — vain lukuoikeudella, ei koskaan kirjaa mitään puolestasi.",
+        "Vie koko historiasi JSON- tai CSV-muodossa milloin tahansa, ja tuo se myöhemmin takaisin.",
+      ],
+    },
   },
   demo: {
     lukumaku: {
@@ -64,6 +78,19 @@ export const fi: Dict = {
       },
       feedback: (label: string, days: string) => `${label} — seuraava kertaus ${days} kuluttua`,
       tagline: "Yksi kortti päivässä pitää putken elossa.",
+    },
+    fiilis: {
+      prompt: "Millainen päivä oli?",
+      chipsPrompt: "Mitä tapahtui?",
+      chipLabels: {
+        exercise: "Liikunta",
+        sleep: "Hyvät unet",
+        work: "Työ",
+        sauna: "Sauna",
+      },
+      save: "Tallenna",
+      saved: (streak: number) => `Tallennettu — putki ${streak} päivää`,
+      tagline: "Kymmenen sekunnin merkintä, josta kasvaa katsomisen arvoinen historia.",
     },
   },
   footer: {

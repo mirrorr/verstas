@@ -3,7 +3,7 @@ export const en = {
   meta: {
     title: "The Workshop — indie apps, carefully made",
     description:
-      "A small workshop building calm, useful apps: Lukumaku for book journaling and Muisti for spaced-repetition flashcards.",
+      "A small workshop building calm, useful apps: Lukumaku for book journaling, Muisti for spaced-repetition flashcards, and Fiilis for a ten-second mood journal.",
   },
   hero: {
     eyebrow: "The Workshop",
@@ -16,6 +16,7 @@ export const en = {
   card: {
     visit: (name: string) => `Visit ${name}`,
     whatsInside: "What's inside",
+    demo: "Demo",
   },
   projects: {
     lukumaku: {
@@ -44,6 +45,19 @@ export const en = {
         "Looks great everywhere, day or night — full dark mode, responsive on any device.",
       ],
     },
+    fiilis: {
+      benefit:
+        "A ten-second mood log that turns into a history worth looking back on.",
+      tags: ["mood", "journaling", "streaks"],
+      benefits: [
+        "Log your day in about ten seconds — a face, a few taps, maybe a line, done.",
+        "Look back at a month of coloured days, a full timeline, and streaks that don't guilt you — a run ending yesterday still counts today as open.",
+        "See real patterns, like whether you feel better on good-sleep days, once there's enough history to compare.",
+        "Works fully offline as an installable app — entries sync automatically once you're back online, never twice.",
+        "If you use Lukumaku or Muisti too, Fiilis can (only if you opt in) suggest a matching chip for days you studied or read — read-only, never written for you.",
+        "Export your whole history as JSON or CSV anytime, and import it back in later.",
+      ],
+    },
   },
   demo: {
     lukumaku: {
@@ -62,6 +76,19 @@ export const en = {
       },
       feedback: (label: string, days: string) => `${label} — next review in ${days}`,
       tagline: "One card a day keeps the streak alive.",
+    },
+    fiilis: {
+      prompt: "How was your day?",
+      chipsPrompt: "What happened?",
+      chipLabels: {
+        exercise: "Exercise",
+        sleep: "Good sleep",
+        work: "Work",
+        sauna: "Sauna",
+      },
+      save: "Save",
+      saved: (streak: number) => `Saved — day ${streak} streak`,
+      tagline: "A ten-second log, and a history worth looking back on.",
     },
   },
   footer: {
